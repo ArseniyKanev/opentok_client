@@ -1,0 +1,23 @@
+<style type="text/css" media="screen">
+   ot-publisher,ot-subscriber,ot-layout {
+       display: block;
+       overflow: hidden;
+   }
+   ot-layout {
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+   }
+</style>
+
+<ot-layout props="{animate:true}" ng-if="streams">
+  <ot-subscriber ng-repeat="stream in streams"
+    stream="stream"
+    props="{style: {nameDisplayMode: 'on'}}">
+  </ot-subscriber>
+  <ot-publisher id="publisher"
+    props="{style: {nameDisplayMode: 'on'}, resolution: '1280x720', frameRate: 30}">
+  </ot-publisher>
+</ot-layout>
